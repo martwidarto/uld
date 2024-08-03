@@ -1,77 +1,33 @@
-// load config
-$(document).ready(function () {
-	$.getJSON("assets/config.json", function (data) {
-		$("#title").html(data.title);
-		$("#navbar-title").html(data.navbar_title);
-		$("#desc-info-modal").html(data.desc_info_modal);
-	});
-});
+// Disabilitas 
+var disabilitas_kedirikot = L.geoJson(null, {
+	// pointToLayer: function (feature, latlng) {
+	// 	if (feature.properties) {
+	// 		// Color Marker
+	// 		var color = function () {
+	// 			if (feature.properties.total <= 10) {
+	// 				return 'green-light';
+	// 			} else if (feature.properties.total > 10 && feature.properties.total <= 20) {
+	// 				return 'orange';
+	// 			} else {
+	// 				return 'red';
+	// 			}
+	// 		};
 
-// Leaflet Map
-var map = L.map('map').setView([-7.6510520, 112.9105138], 13);
-
-// Basemap Layers
-var street = L.tileLayer('https://mt0.google.com/vt/lyrs=r&hl=en&x={x}&y={y}&z={z}', {
-	maxZoom: 20,
-	minZoom: 0,
-	attribution: 'Google Street',
-	label: 'Google Street'
-});
-
-var satellite = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-	maxZoom: 20,
-	minZoom: 0,
-	subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-	attribution: 'Google Satellite',
-	label: 'Google Satellite'
-});
-
-var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	maxZoom: 20,
-	minZoom: 0,
-	attribution: 'OpenStreetMap',
-	label: 'OSM'
-});
-
-// if null value
-function nullValue(value) {
-	if (value == null) {
-		return 0;
-	} else {
-		return value;
-	}
-}
-
-// Titik Desa
-var titikdesa = L.geoJson(null, {
-	pointToLayer: function (feature, latlng) {
-		if (feature.properties) {
-			// Color Marker
-			var color = function () {
-				if (feature.properties.total <= 10) {
-					return 'green-light';
-				} else if (feature.properties.total > 10 && feature.properties.total <= 20) {
-					return 'orange';
-				} else {
-					return 'red';
-				}
-			};
-
-			// Marker
-			var redMarker = L.ExtraMarkers.icon({
-				icon: 'fa-number',
-				number: feature.properties.total,
-				markerColor: color(),
-				shape: 'square',
-				prefix: 'fa',
-				tooltipAnchor: [15, -25]
-			});
-			return L.marker(latlng, {
-				icon: redMarker,
-				riseOnHover: true
-			});
-		}
-	},
+	// 		// Marker
+	// 		var redMarker = L.ExtraMarkers.icon({
+	// 			icon: 'fa-number',
+	// 			number: feature.properties.total,
+	// 			markerColor: color(),
+	// 			shape: 'square',
+	// 			prefix: 'fa',
+	// 			tooltipAnchor: [15, -25]
+	// 		});
+	// 		return L.marker(latlng, {
+	// 			icon: redMarker,
+	// 			riseOnHover: true
+	// 		});
+	// 	}
+	// },
 	onEachFeature: function (feature, layer) {
 		if (feature.properties) {
 			var title = "<strong>Desa " + feature.properties.WADMKD + ", Kec. " + feature.properties.WADMKC + "</strong>";
@@ -139,7 +95,7 @@ var titikdesa = L.geoJson(null, {
 					$("#featureModal").modal("show");
 				},
 				mouseover: function (e) {
-					titikdesa.bindTooltip(feature.properties.WADMKD + ", " + feature.properties.WADMKC);
+					disabilitas_kedirikot.bindTooltip(feature.properties.WADMKD + ", " + feature.properties.WADMKC);
 				}
 			});
 		}
@@ -149,16 +105,16 @@ var titikdesa = L.geoJson(null, {
 		return feature.properties.total > 0;
 	}
 });
-$.getJSON("data/disabilitas_desa_point.geojson", function (data) {
-	titikdesa.addData(data);
-	map.addLayer(titikdesa);
+$.getJSON("data/disabilitas_kedirikot.geojson", function (data) {
+	disabilitas_kedirikot.addData(data);
+	map.addLayer(disabilitas_kedirikot);
 });
 
 /* Batas Desa */
-map.createPane('pane_batasdesa');
-map.getPane('pane_batasdesa').style.zIndex = 401;
-var batasdesa = L.geoJson(null, {
-	pane: 'pane_batasdesa',
+map.createPane('pane_batasdesa_kedirikot');
+map.getPane('pane_batasdesa_kedirikot').style.zIndex = 401;
+var batasdesa_kedirikot = L.geoJson(null, {
+	pane: 'pane_batasdesa_kedirikot',
 	/* Style polygon */
 	style: function (feature) { //Fungsi style polygon
 		return {
@@ -181,30 +137,30 @@ var batasdesa = L.geoJson(null, {
 					fillColor: "cyan", //Warna tengah polygon
 					fillOpacity: 1, //Transparansi tengah polygon
 				});
-				batasdesa.bindTooltip(feature.properties.WADMKD + ", " + feature.properties.WADMKC); //Tooltip
+				batasdesa_kedirikot.bindTooltip(feature.properties.WADMKD + ", " + feature.properties.WADMKC); //Tooltip
 			},
 			mouseout: function (e) { //Fungsi ketika mouse keluar dari area obyek
-				batasdesa.resetStyle(e.target); //Mengembalikan style polygon ke style awal
+				batasdesa_kedirikot.resetStyle(e.target); //Mengembalikan style polygon ke style awal
 				map.closePopup(); //Menutup popup
 			},
 			click: function (e) { //Fungsi ketika obyek di-klik
-				batasdesa.bindPopup("Desa " + feature.properties.WADMKD + ", Kec. " + feature.properties.WADMKC); //Popup
+				batasdesa_kedirikot.bindPopup("Desa " + feature.properties.WADMKD + ", Kec. " + feature.properties.WADMKC); //Popup
 			}
 		});
 	}
 });
 /* memanggil data geojson polygon */
-$.getJSON("data/batas_desa.geojson", function (data) {
-	batasdesa.addData(data);
-	map.addLayer(batasdesa); //batasdesa ditampilkan ketika halaman dipanggil
-	map.fitBounds(batasdesa.getBounds());
+$.getJSON("data/batas_desa_kedirikot.geojson", function (data) {
+	batasdesa_kedirikot.addData(data);
+	map.addLayer(batasdesa_kedirikot); //batasdesa_kedirikot ditampilkan ketika halaman dipanggil
+	map.fitBounds(batasdesa_kedirikot.getBounds());
 });
 
 /* Batas Kecamatan */
-map.createPane('pane_bataskecamatan');
-map.getPane('pane_bataskecamatan').style.zIndex = 402;
-var bataskecamatan = L.geoJson(null, {
-	pane: 'pane_bataskecamatan',
+map.createPane('pane_bataskecamatan_kedirikot');
+map.getPane('pane_bataskecamatan_kedirikot').style.zIndex = 402;
+var bataskecamatan_kedirikot = L.geoJson(null, {
+	pane: 'pane_bataskecamatan_kedirikot',
 	/* Style polygon */
 	style: function (feature) { //Fungsi style polygon
 		return {
@@ -227,70 +183,20 @@ var bataskecamatan = L.geoJson(null, {
 					fillColor: "cyan", //Warna tengah polygon
 					fillOpacity: 1, //Transparansi tengah polygon
 				});
-				bataskecamatan.bindTooltip(feature.properties.WADMKC); //Tooltip
+				bataskecamatan_kedirikot.bindTooltip(feature.properties.WADMKC); //Tooltip
 			},
 			mouseout: function (e) { //Fungsi ketika mouse keluar dari area obyek
-				bataskecamatan.resetStyle(e.target); //Mengembalikan style polygon ke style awal
+				bataskecamatan_kedirikot.resetStyle(e.target); //Mengembalikan style polygon ke style awal
 				map.closePopup(); //Menutup popup
 			},
 			click: function (e) { //Fungsi ketika obyek di-klik
-				bataskecamatan.bindPopup("Kec. " + feature.properties.WADMKC); //Popup
+				bataskecamatan_kedirikot.bindPopup("Kec. " + feature.properties.WADMKC); //Popup
 			}
 		});
 	}
 });
 /* memanggil data geojson polygon */
-$.getJSON("data/batas_kecamatan.geojson", function (data) {
-	bataskecamatan.addData(data);
-	// map.addLayer(bataskecamatan); //batas kecamatan ditampilkan ketika halaman dipanggil
+$.getJSON("data/batas_kecamatan_kedirikot.geojson", function (data) {
+	bataskecamatan_kedirikot.addData(data);
+	// map.addLayer(bataskecamatan_kedirikot); //batas kecamatan ditampilkan ketika halaman dipanggil
 });
-
-// Multi Bahaya
-map.createPane('pane_MultiBahaya');
-map.getPane('pane_MultiBahaya').style.zIndex = 201;
-var img_MultiBahaya = 'data/MultiBahaya.png';
-var img_bounds_MultiBahaya = [[-8.780713848073898, 110.89465174832193], [-5.0424415276561305, 116.27106872377715]];
-var layer_MultiBahaya = new L.imageOverlay(img_MultiBahaya, img_bounds_MultiBahaya, { pane: 'pane_MultiBahaya' });
-map.addLayer(layer_MultiBahaya);
-
-// Control Layer Basemaps
-map.addControl(L.control.basemaps({
-	basemaps: [osm, street, satellite],
-	tileX: 0, // tile X coordinate
-	tileY: 0, // tile Y coordinate
-	tileZ: 1 // tile zoom level
-}));
-
-// Control Layer
-var layers = {
-	"Disabilitas<br>&nbsp;&nbsp;&nbsp;<img src='assets/images/legend/lightgreenmarker.png' width='24'> 1 - 10<br>&nbsp;&nbsp;&nbsp;<img src='assets/images/legend/orangemarker.png' width='24'> 11 - 20<br>&nbsp;&nbsp;&nbsp;<img src='assets/images/legend/redmarker.png' width='24'> > 20": titikdesa,
-	"Batas Desa": batasdesa,
-	"Batas Kecamatan": bataskecamatan,
-	"Multi Bahaya": layer_MultiBahaya
-};
-
-L.control.layers(null, layers, { collapsed: false }).addTo(map);
-
-
-// Scale Bar
-L.control.scale({
-	position: 'bottomleft',
-	imperial: false
-}).addTo(map);
-
-// Logo
-L.Control.Watermark = L.Control.extend({
-	onAdd: function (map) {
-		var img = L.DomUtil.create('img');
-		img.src = 'assets/images/logo.png'; //Image URL
-		img.style.width = '50px'; //Image Size
-		return img;
-	},
-	onRemove: function (map) {
-		// Nothing to do here
-	}
-});
-L.control.watermark = function (opts) {
-	return new L.Control.Watermark(opts);
-}
-L.control.watermark({ position: 'bottomleft' }).addTo(map);

@@ -7,6 +7,8 @@
 ## Ubah Data
 1. Replace file disabilitas_desa_point.geojson di folder data dengan file geojson yang baru
 
+## Demo
+[https://martwidarto.github.io/uld/](https://martwidarto.github.io/uld/)
 ____    
 
 > Supported by [SinauGIS](https://sinaugis.com)

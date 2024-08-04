@@ -16,6 +16,7 @@ var layers = [
 			{ label: ' Kota Kediri', layer: disabilitas_kedirikot},
 			{ label: ' Kota Malang', layer: disabilitas_malangkot},
 			{ label: ' Kabupaten Blitar', layer: disabilitas_blitarkab},
+			{ label: ' Kabupaten Pacitan', layer: disabilitas_pacitan},
 		]
 	},
 	{
@@ -27,6 +28,7 @@ var layers = [
 			{ label: ' Kota Kediri', layer: bataskecamatan_kedirikot },
 			{ label: ' Kota Malang', layer: bataskecamatan_malangkot },
 			{ label: ' Kabupaten Blitar', layer: bataskecamatan_blitarkab },
+			{ label: ' Kabupaten Pacitan', layer: bataskecamatan_pacitan },
 		]
 	},
 	{
@@ -38,6 +40,7 @@ var layers = [
 			{ label: ' Kota Kediri', layer: batasdesa_kedirikot },
 			{ label: ' Kota Malang', layer: batasdesa_malangkot },
 			{ label: ' Kabupaten Blitar', layer: batasdesa_blitarkab },
+			{ label: ' Kabupaten Pacitan', layer: batasdesa_pacitan },
 		]
 	},
 	{

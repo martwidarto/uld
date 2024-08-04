@@ -11,10 +11,13 @@ map.addControl(L.control.basemaps({
 var layers = {
 	"Disabilitas Pasuruan<br>&nbsp;&nbsp;&nbsp;<img src='assets/images/legend/lightgreenmarker.png' width='24'> 1 - 10<br>&nbsp;&nbsp;&nbsp;<img src='assets/images/legend/orangemarker.png' width='24'> 11 - 20<br>&nbsp;&nbsp;&nbsp;<img src='assets/images/legend/redmarker.png' width='24'> > 20": disabilitas_pasuruan,
 	"Disabilitas Kota Kediri<br>&nbsp;&nbsp;&nbsp;<img src='assets/images/legend/lightgreenmarker.png' width='24'> 1 - 10<br>&nbsp;&nbsp;&nbsp;<img src='assets/images/legend/orangemarker.png' width='24'> 11 - 20<br>&nbsp;&nbsp;&nbsp;<img src='assets/images/legend/redmarker.png' width='24'> > 20": disabilitas_kedirikot,
+	"Disabilitas Kabupaten Blitar<br>&nbsp;&nbsp;&nbsp;<img src='assets/images/legend/lightgreenmarker.png' width='24'> 1 - 10<br>&nbsp;&nbsp;&nbsp;<img src='assets/images/legend/orangemarker.png' width='24'> 11 - 20<br>&nbsp;&nbsp;&nbsp;<img src='assets/images/legend/redmarker.png' width='24'> > 20": disabilitas_blitarkab,
 	"Batas Desa Pasuruan": batasdesa_pasuruan,
 	"Batas Kecamatan Pasuruan": bataskecamatan_pasuruan,
 	"Batas Desa Kota Kediri": batasdesa_kedirikot,
 	"Batas Kecamatan Kota Kediri": bataskecamatan_kedirikot,
+	"Batas Desa Kabupaten Blitar": batasdesa_blitarkab,
+	"Batas Kecamatan Kabupaten Blitar": bataskecamatan_blitarkab,
 	"Multi Bahaya": layer_MultiBahaya
 };
 

@@ -8,7 +8,7 @@ $(document).ready(function () {
 });
 
 // Leaflet Map
-var map = L.map('map').setView([-7.6510520, 112.9105138], 13);
+var map = L.map('map').setView([-7.7326606,112.9312134], 9);
 
 // Basemap Layers
 var street = L.tileLayer('https://mt0.google.com/vt/lyrs=r&hl=en&x={x}&y={y}&z={z}', {

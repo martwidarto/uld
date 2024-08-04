@@ -107,7 +107,7 @@ var disabilitas_pasuruan = L.geoJson(null, {
 });
 $.getJSON("data/disabilitas_pasuruan.geojson", function (data) {
 	disabilitas_pasuruan.addData(data);
-	// map.addLayer(disabilitas_pasuruan);
+	map.addLayer(disabilitas_pasuruan);
 });
 
 /* Batas Desa */
@@ -153,7 +153,6 @@ var batasdesa_pasuruan = L.geoJson(null, {
 $.getJSON("data/batas_desa_pasuruan.geojson", function (data) {
 	batasdesa_pasuruan.addData(data);
 	map.addLayer(batasdesa_pasuruan); //batasdesa_pasuruan ditampilkan ketika halaman dipanggil
-	map.fitBounds(batasdesa_pasuruan.getBounds());
 });
 
 /* Batas Kecamatan */

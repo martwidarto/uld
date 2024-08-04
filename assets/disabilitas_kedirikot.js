@@ -1,33 +1,33 @@
 // Disabilitas 
 var disabilitas_kedirikot = L.geoJson(null, {
-	// pointToLayer: function (feature, latlng) {
-	// 	if (feature.properties) {
-	// 		// Color Marker
-	// 		var color = function () {
-	// 			if (feature.properties.total <= 10) {
-	// 				return 'green-light';
-	// 			} else if (feature.properties.total > 10 && feature.properties.total <= 20) {
-	// 				return 'orange';
-	// 			} else {
-	// 				return 'red';
-	// 			}
-	// 		};
+	pointToLayer: function (feature, latlng) {
+		if (feature.properties) {
+			// Color Marker
+			var color = function () {
+				if (feature.properties.total <= 10) {
+					return 'green-light';
+				} else if (feature.properties.total > 10 && feature.properties.total <= 20) {
+					return 'orange';
+				} else {
+					return 'red';
+				}
+			};
 
-	// 		// Marker
-	// 		var redMarker = L.ExtraMarkers.icon({
-	// 			icon: 'fa-number',
-	// 			number: feature.properties.total,
-	// 			markerColor: color(),
-	// 			shape: 'square',
-	// 			prefix: 'fa',
-	// 			tooltipAnchor: [15, -25]
-	// 		});
-	// 		return L.marker(latlng, {
-	// 			icon: redMarker,
-	// 			riseOnHover: true
-	// 		});
-	// 	}
-	// },
+			// Marker
+			var redMarker = L.ExtraMarkers.icon({
+				icon: 'fa-number',
+				number: feature.properties.total,
+				markerColor: color(),
+				shape: 'square',
+				prefix: 'fa',
+				tooltipAnchor: [15, -25]
+			});
+			return L.marker(latlng, {
+				icon: redMarker,
+				riseOnHover: true
+			});
+		}
+	},
 	onEachFeature: function (feature, layer) {
 		if (feature.properties) {
 			var title = "<strong>Desa " + feature.properties.WADMKD + ", Kec. " + feature.properties.WADMKC + "</strong>";
@@ -153,7 +153,6 @@ var batasdesa_kedirikot = L.geoJson(null, {
 $.getJSON("data/batas_desa_kedirikot.geojson", function (data) {
 	batasdesa_kedirikot.addData(data);
 	map.addLayer(batasdesa_kedirikot); //batasdesa_kedirikot ditampilkan ketika halaman dipanggil
-	map.fitBounds(batasdesa_kedirikot.getBounds());
 });
 
 /* Batas Kecamatan */

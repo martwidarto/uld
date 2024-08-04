@@ -18,7 +18,7 @@ var layers = {
 	"Batas Kecamatan Kota Kediri": bataskecamatan_kedirikot,
 	"Batas Desa Kabupaten Blitar": batasdesa_blitarkab,
 	"Batas Kecamatan Kabupaten Blitar": bataskecamatan_blitarkab,
-	"Multi Bahaya": layer_MultiBahaya
+	"Multi Bahaya<br>&nbsp;&nbsp;&nbsp;&nbsp;<img src='assets/images/indeks_bahaya_kerentanan_risiko.png' width='85' height='15'><br>&nbsp;&nbsp;&nbsp;&nbsp;<small>Rendah&nbsp;&nbsp;&nbsp;&nbsp;Tinggi</small>": layer_MultiBahaya
 };
 
 L.control.layers(null, layers, { collapsed: false }).addTo(map);

@@ -20,6 +20,7 @@ var layers = [
 			{ label: ' Kabupaten Lumajang', layer: disabilitas_lumajang},
 			{ label: ' Kabupaten Gresik', layer: disabilitas_gresik},
 			{ label: ' Kabupaten Sampang', layer: disabilitas_sampang},
+			{ label: ' Kota Surabaya', layer: disabilitas_surabayakot},
 		]
 	},
 	{
@@ -35,6 +36,7 @@ var layers = [
 			{ label: ' Kabupaten Lumajang', layer: bataskecamatan_lumajang },
 			{ label: ' Kabupaten Gresik', layer: bataskecamatan_gresik },
 			{ label: ' Kabupaten Sampang', layer: bataskecamatan_sampang },
+			{ label: ' Kota Surabaya', layer: bataskecamatan_surabayakot },
 		]
 	},
 	{
@@ -50,6 +52,7 @@ var layers = [
 			{ label: ' Kabupaten Lumajang', layer: batasdesa_lumajang },
 			{ label: ' Kabupaten Gresik', layer: batasdesa_gresik },
 			{ label: ' Kabupaten Sampang', layer: batasdesa_sampang },
+			{ label: ' Kota Surabaya', layer: batasdesa_surabayakot },
 		]
 	},
 	{

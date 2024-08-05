@@ -17,6 +17,8 @@ var layers = [
 			{ label: ' Kota Malang', layer: disabilitas_malangkot},
 			{ label: ' Kabupaten Blitar', layer: disabilitas_blitarkab},
 			{ label: ' Kabupaten Pacitan', layer: disabilitas_pacitan},
+			{ label: ' Kabupaten Lumajang', layer: disabilitas_lumajang},
+			{ label: ' Kabupaten Gresik', layer: disabilitas_gresik},
 		]
 	},
 	{
@@ -29,6 +31,8 @@ var layers = [
 			{ label: ' Kota Malang', layer: bataskecamatan_malangkot },
 			{ label: ' Kabupaten Blitar', layer: bataskecamatan_blitarkab },
 			{ label: ' Kabupaten Pacitan', layer: bataskecamatan_pacitan },
+			{ label: ' Kabupaten Lumajang', layer: bataskecamatan_lumajang },
+			{ label: ' Kabupaten Gresik', layer: bataskecamatan_gresik },
 		]
 	},
 	{
@@ -41,6 +45,8 @@ var layers = [
 			{ label: ' Kota Malang', layer: batasdesa_malangkot },
 			{ label: ' Kabupaten Blitar', layer: batasdesa_blitarkab },
 			{ label: ' Kabupaten Pacitan', layer: batasdesa_pacitan },
+			{ label: ' Kabupaten Lumajang', layer: batasdesa_lumajang },
+			{ label: ' Kabupaten Gresik', layer: batasdesa_gresik },
 		]
 	},
 	{

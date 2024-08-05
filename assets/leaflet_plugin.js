@@ -19,6 +19,7 @@ var layers = [
 			{ label: ' Kabupaten Pacitan', layer: disabilitas_pacitan},
 			{ label: ' Kabupaten Lumajang', layer: disabilitas_lumajang},
 			{ label: ' Kabupaten Gresik', layer: disabilitas_gresik},
+			{ label: ' Kabupaten Sampang', layer: disabilitas_sampang},
 		]
 	},
 	{
@@ -33,6 +34,7 @@ var layers = [
 			{ label: ' Kabupaten Pacitan', layer: bataskecamatan_pacitan },
 			{ label: ' Kabupaten Lumajang', layer: bataskecamatan_lumajang },
 			{ label: ' Kabupaten Gresik', layer: bataskecamatan_gresik },
+			{ label: ' Kabupaten Sampang', layer: bataskecamatan_sampang },
 		]
 	},
 	{
@@ -47,6 +49,7 @@ var layers = [
 			{ label: ' Kabupaten Pacitan', layer: batasdesa_pacitan },
 			{ label: ' Kabupaten Lumajang', layer: batasdesa_lumajang },
 			{ label: ' Kabupaten Gresik', layer: batasdesa_gresik },
+			{ label: ' Kabupaten Sampang', layer: batasdesa_sampang },
 		]
 	},
 	{

@@ -85,6 +85,9 @@ var disabilitas_gresik = L.geoJson(null, {
 				"<tr><th>Rungu Wicara</th><td class='text-center'>" + nullValue(feature.properties.rw) + "</td></tr>" +
 				"<tr><th>Wicara</th><td class='text-center'>" + nullValue(feature.properties.w) + "</td></tr>" +
 				"<tr><th>Wicara Grahita</th><td class='text-center'>" + nullValue(feature.properties.wg) + "</td></tr>" +
+				"<tr><th>Autis</th><td class='text-center'>" + nullValue(feature.properties.a) + "</td></tr>" +
+                "<tr><th>Eks Kusta</th><td class='text-center'>" + nullValue(feature.properties.ek) + "</td></tr>" +
+                "<tr><th>Kusta</th><td class='text-center'>" + nullValue(feature.properties.k) + "</td></tr>" +
 				"<tr><th>Tidak Teridentifikasi</th><td class='text-center'>" + nullValue(feature.properties.tt) + "</td></tr>" +
 				"<tr><th>Total</th><td class='text-center'>" + nullValue(feature.properties.total) + "</td></tr>" +
 				"</table>";
